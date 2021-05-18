@@ -1,8 +1,9 @@
 import { Component } from 'react';
-
+import { connect } from 'react-redux';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import Filter from './components/Filter';
+import Container from './components/Container';
 
 class App extends Component {
   state = {
@@ -56,18 +57,27 @@ class App extends Component {
     const visibleContacts = this.getVisibleContact();
     const { filter } = this.state;
     return (
-      <div className="App">
-        <h1>Phonebook</h1>
-        <ContactForm onSubmit={this.formSubmitHandler} />
-        <h2>Contacts</h2>
-        <Filter value={filter} onChange={this.changeFilter} />
-        <ContactList
-          contacts={visibleContacts}
-          onDeleteContact={this.deleteContact}
-        />
-      </div>
+      <Container>
+        <div className="App">
+          <h1>Phonebook</h1>
+          <ContactForm onSubmit={this.formSubmitHandler} />
+          <h2>Contacts</h2>
+          <Filter value={filter} onChange={this.changeFilter} />
+          <ContactList
+            contacts={visibleContacts}
+            onDeleteContact={this.deleteContact}
+          />
+        </div>
+      </Container>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    value: state.contacts,
+    filterValue: state.filter,
+  };
+};
+
+export default connect(mapStateToProps)(App);
