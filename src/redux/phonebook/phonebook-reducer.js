@@ -7,6 +7,7 @@ const contacts = (state = [], { type, payload }) => {
       const isNoUnique = state.find(contact => contact.name === payload.name);
       if (isNoUnique) {
         alert(`${payload.name} is alredy in contacts`);
+        return state;
       } else {
         return [...state, payload];
       }
