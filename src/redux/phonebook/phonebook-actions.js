@@ -1,12 +1,16 @@
 import actionTypes from './phonebook-types';
+import { v4 as uuidv4 } from 'uuid';
 
-const formSubmitHandler = data => ({
+const addContact = data => ({
   type: actionTypes.ADD,
-  payload: data,
+  payload: {
+    id: uuidv4(),
+    ...data,
+  },
 });
-const deleteContact = value => ({
+const deleteContact = id => ({
   type: actionTypes.DELETE,
-  payload: value,
+  payload: id,
 });
 
 const changeFilter = value => ({
@@ -14,4 +18,5 @@ const changeFilter = value => ({
   payload: value,
 });
 
-export { formSubmitHandler, deleteContact, changeFilter };
+// eslint-disable-next-line import/no-anonymous-default-export
+export default { addContact, deleteContact, changeFilter };

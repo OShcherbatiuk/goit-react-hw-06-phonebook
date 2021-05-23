@@ -1,4 +1,4 @@
-const ADD = 'phonebook/formSubmitHandler';
+const ADD = 'phonebook/addContact';
 const FILTER = 'phonebook/changeFilter';
 const DELETE = 'phonebook/deleteContact';
 
