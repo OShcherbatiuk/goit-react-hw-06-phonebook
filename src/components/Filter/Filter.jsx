@@ -19,11 +19,6 @@ const Filter = ({ value, onChange }) => (
   </label>
 );
 
-Filter.propTypes = {
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-};
-
 const mapStateToProps = state => ({
   value: state.phonebook.filter,
 });
@@ -31,5 +26,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onChange: e => dispatch(contactActions.changeFilter(e.target.value)),
 });
+
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

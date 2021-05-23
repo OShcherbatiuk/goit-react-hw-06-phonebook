@@ -78,12 +78,11 @@ class ContactForm extends Component {
   }
 }
 
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func,
-};
-
 const mapDispatchToProps = dispatch => ({
   onSubmit: data => dispatch(contactActions.addContact(data)),
 });
 
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+};
 export default connect(null, mapDispatchToProps)(ContactForm);
