@@ -6,21 +6,27 @@ import s from './Filter.module.css';
 
 const inputId = shortid.generate();
 
-const Filter = ({ value, onChange }) => (
-  <label className={s.label} htmlFor={inputId}>
-    Find contacts by name
-    <input
-      className={s.input}
-      id={inputId}
-      type="text"
-      value={value}
-      onChange={onChange}
-    />
-  </label>
-);
+const Filter = ({ contacts, value, onChange }) => {
+  const isShowContact = contacts.length;
+  return isShowContact ? (
+    <label className={s.label} htmlFor={inputId}>
+      Find contacts by name
+      <input
+        className={s.input}
+        id={inputId}
+        type="text"
+        value={value}
+        onChange={onChange}
+      />
+    </label>
+  ) : (
+    <p>You haven't any contacts</p>
+  );
+};
 
 const mapStateToProps = state => ({
   value: state.phonebook.filter,
+  contacts: state.phonebook.contacts,
 });
 
 const mapDispatchToProps = dispatch => ({
