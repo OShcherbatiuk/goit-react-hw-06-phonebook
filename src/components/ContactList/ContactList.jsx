@@ -5,7 +5,8 @@ import { PropTypes } from 'prop-types';
 import s from './ContactList.module.css';
 
 const ContactList = ({ contacts, onDeleteContact }) => {
-  return (
+  const isShowContact = contacts.length;
+  return isShowContact ? (
     <ul className={s.list}>
       {contacts.map(({ id, name, number }) => (
         <li className={s.item} key={id}>
@@ -20,6 +21,8 @@ const ContactList = ({ contacts, onDeleteContact }) => {
         </li>
       ))}
     </ul>
+  ) : (
+    <p>You have no contacts in your list</p>
   );
 };
 
