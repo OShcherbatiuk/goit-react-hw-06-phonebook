@@ -7,10 +7,10 @@ import s from './Filter.module.css';
 const inputId = shortid.generate();
 
 const Filter = ({ value, onChange }) => (
-  <label htmlFor={inputId}>
+  <label className={s.label} htmlFor={inputId}>
     Find contacts by name
     <input
-      className={s.lable}
+      className={s.input}
       id={inputId}
       type="text"
       value={value}

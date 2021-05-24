@@ -1,4 +1,11 @@
-.lable {
+.label {
+  display: inline-block;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.input {
   display: block;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  width: 200px;
+  height: 30px;
 }

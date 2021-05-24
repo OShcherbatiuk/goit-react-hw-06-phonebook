@@ -1,6 +1,21 @@
-.lable {
+.form {
+  border: 1px solid black;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.label {
+  font-size: 22px;
+}
+.input {
   display: block;
-  margin-bottom: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  height: 30px;
+  @media screen and (min-width: 1024px) {
+    width: 250px;
+  }
 }
 
 .btn {

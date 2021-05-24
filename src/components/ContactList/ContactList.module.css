@@ -1,5 +1,14 @@
 .item {
-  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 20px;
+  border: 1px solid black;
+  width: 100%;
+}
+.item:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .btn {

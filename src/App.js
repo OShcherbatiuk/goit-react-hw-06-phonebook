@@ -3,6 +3,7 @@ import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import Filter from './components/Filter';
 import Container from './components/Container';
+import Section from './components/Section';
 
 const App = () => {
   // componentDidMount() {
@@ -20,13 +21,13 @@ const App = () => {
   // }
   return (
     <Container>
-      <div className="App">
-        <h1>Phonebook</h1>
+      <Section title={'Phonebook'}>
         <ContactForm />
-        <h2>Contacts</h2>
+      </Section>
+      <Section title={'Contacts'}>
         <Filter />
         <ContactList />
-      </div>
+      </Section>
     </Container>
   );
 };

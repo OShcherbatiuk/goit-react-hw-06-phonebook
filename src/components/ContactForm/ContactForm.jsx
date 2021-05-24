@@ -40,11 +40,11 @@ class ContactForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor={this.nameInputId}>
+        <form className={s.form} onSubmit={this.handleSubmit}>
+          <label className={s.label} htmlFor={this.nameInputId}>
             Name
             <input
-              className={s.lable}
+              className={s.input}
               type="text"
               name="name"
               id={this.nameInputId}
@@ -58,7 +58,7 @@ class ContactForm extends Component {
           <label htmlFor={this.numberInputId}>
             Number
             <input
-              className={s.lable}
+              className={s.input}
               type="tel"
               name="number"
               id={this.numberInputId}
